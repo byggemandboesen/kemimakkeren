@@ -1,8 +1,8 @@
 # Kemimakkeren
-The purpose of this program is to save time plotting koncentration of a solution over time in the danish chemistry exam in "Gymnasium".
+The purpose of this program is to save time plotting the concentration of a solution over time in the danish chemistry exam in "Gymnasium".
 
 ## Installing
-Install git on your computer and copy the repository link. Open command prompt in you install directory and type the following:
+Install git on your computer and copy the repository link. Open command prompt in your desired install directory and type the following:
 ```bash
 git clone https://github.com/byggemandboesen/kemimakkeren.git
 ```
