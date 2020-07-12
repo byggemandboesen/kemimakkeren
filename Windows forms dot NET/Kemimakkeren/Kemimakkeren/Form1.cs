@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Kemimakkeren
@@ -15,6 +10,7 @@ namespace Kemimakkeren
         public Form()
         {
             InitializeComponent();
+            values.outputPath = Path.Combine(Directory.GetCurrentDirectory(), "Output files");
         }
 
         private void getDirButton_Click(object sender, EventArgs e)
@@ -25,11 +21,31 @@ namespace Kemimakkeren
             if (fileBrowseDialog.ShowDialog() == DialogResult.OK)
             {
                 values.filePath = fileBrowseDialog.FileName;
+                ExcelExecutions.initExcel();
+                updateListBoxValues(xValues, yValues);
             }
             else
             {
                 MessageBox.Show("Error browsing for file... Please try again");
             }
         }
+
+        public static void updateListBoxValues(ListBox xValues, ListBox yValues)
+        {
+            for (int i = 1; i < ExcelExecutions.xlColumnTitles.Length; i++)
+            {
+                xValues.Items.Add(ExcelExecutions.xlColumnTitles[i]);
+                yValues.Items.Add(ExcelExecutions.xlColumnTitles[i]);
+            }
+        }
+
+    }
+
+    // Contains values such as directories and etc.
+    class values
+    {
+        public static String filePath { get; set; }
+        public static String outputPath { get; set; }
+
     }
 }
