@@ -3,6 +3,7 @@ using OxyPlot.WindowsForms;
 using System.Windows.Forms;
 using System;
 using System.Linq;
+using System.Security.Policy;
 
 namespace Kemimakkeren
 {
@@ -12,36 +13,61 @@ namespace Kemimakkeren
         {
             Excel.Application xlApp = new Excel.Application();
             xlApp.Visible = false;
-            Excel.Workbook xlWorkBook = xlApp.Workbooks.Open(values.filePath);
-            Excel.Worksheet xlWorkSheet = xlWorkBook.Worksheets[1];
+            Excel.Workbook xlWorkBook = xlApp.Workbooks.Open(inputOutputPath.filePath);
+            xlWorksheet = xlWorkBook.Worksheets[1];
+            xlRange = xlWorksheet.UsedRange;
+            
+            updateTitles();
 
-            Excel.Range xlRange = xlWorkSheet.UsedRange;
-
-            updateTitles(xlRange, xlWorkSheet);
-
-
-
-            xlApp.Quit();
         }
 
         // Updates the titles in the document
-        public static void updateTitles(Excel.Range range, Excel.Worksheet sheet)
+        public static void updateTitles()
         {
-            string[] tempTitleArray = new string[range.Columns.Count];
-            Console.WriteLine(sheet.Cells[1,1].Value);
-            for (int i = 1; i <= range.Columns.Count; i++)
+            string[] tempTitleArray = new string[xlRange.Columns.Count];
+
+            // Loops through the column titles in the Excel file
+            for (int i = 0; i < tempTitleArray.Length; i++)
             {
-                tempTitleArray[i-1] = sheet.Cells[1, i].Value;
+                tempTitleArray[i] = xlWorksheet.Cells[1, i + 1].Value2;
             }
+
             xlColumnTitles = tempTitleArray;
         }
 
+        // Adds the chosen values to its corresponding value array FIX DIS YES VERY GOOD
+        public static void addValuesToArray(int indexChosen, double[] array)
+        {
+            string tempValue;
+            for (int i = 0; i < xlRange.Rows.Count; i++)
+            {
+                tempValue = Convert.ToString(xlWorksheet.Cells[i + 2, indexChosen + 1].Value2);
+
+                if (tempValue == null)
+                {
+                    tempValue = "0.0";
+                }
+
+                // This throws an error "System.NullReferenceException: 'Object reference not set to an instance of an object.'"
+                array[i] = Convert.ToDouble(tempValue);
+            }
+        }
 
 
+        public static Excel.Range xlRange { get; set; }
+        public static Excel._Worksheet xlWorksheet { get; set; }
 
+
+        // Array stores column titles in Excel file loaded
         public static string[] xlColumnTitles { get; set; }
 
-        public static int[] timeValues { get; set; }
+        // Arrays that store the active x- and y-titles
+        public static String xTitle { get; set; }
+        public static String yTitle { get; set; }
+
+        // Arrays that store active x- and y-value
+        public static double[] xValues { get; set; }
+        public static double[] yValues { get; set; }
     }
 
 }

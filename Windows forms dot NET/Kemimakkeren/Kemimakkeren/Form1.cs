@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -10,7 +12,6 @@ namespace Kemimakkeren
         public Form()
         {
             InitializeComponent();
-            values.outputPath = Path.Combine(Directory.GetCurrentDirectory(), "Output files");
         }
 
         private void getDirButton_Click(object sender, EventArgs e)
@@ -20,7 +21,7 @@ namespace Kemimakkeren
             fileBrowseDialog.Filter = "Excel filer (*.xlsx; *.csv;)|*.xlsx; *.csv;|All files (*.*)|*.*";
             if (fileBrowseDialog.ShowDialog() == DialogResult.OK)
             {
-                values.filePath = fileBrowseDialog.FileName;
+                inputOutputPath.filePath = fileBrowseDialog.FileName;
                 ExcelExecutions.initExcel();
                 updateListBoxValues(xValues, yValues);
             }
@@ -30,19 +31,57 @@ namespace Kemimakkeren
             }
         }
 
+        // Updates the two listboxes with new titles
         public static void updateListBoxValues(ListBox xValues, ListBox yValues)
         {
-            for (int i = 1; i < ExcelExecutions.xlColumnTitles.Length; i++)
+            for (int i = 0; i < ExcelExecutions.xlColumnTitles.Length; i++)
             {
                 xValues.Items.Add(ExcelExecutions.xlColumnTitles[i]);
                 yValues.Items.Add(ExcelExecutions.xlColumnTitles[i]);
             }
         }
 
+        // Opens the output folder
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string outputPath = Path.Combine(Directory.GetCurrentDirectory(), "Output files");
+            inputOutputPath.outputPath = outputPath;
+            Process.Start(outputPath);
+        }
+
+        private void xValues_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            int locationPressed = xValues.IndexFromPoint(e.Location);
+            ExcelExecutions.xTitle = ExcelExecutions.xlColumnTitles[locationPressed];
+            chosenXValue.Text = "Valgt: " + ExcelExecutions.xTitle;
+            chosenXValue.ForeColor = Color.Green;
+            ExcelExecutions.addValuesToArray(locationPressed, ExcelExecutions.xValues);
+        }
+
+        private void yValues_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            int locationPressed = xValues.IndexFromPoint(e.Location);
+            ExcelExecutions.yTitle = ExcelExecutions.xlColumnTitles[locationPressed];
+            chosenYValue.Text = "Valgt: " + ExcelExecutions.yTitle;
+            chosenYValue.ForeColor = Color.Green;
+            ExcelExecutions.addValuesToArray(locationPressed, ExcelExecutions.yValues);
+        }
+
+        private void initPlot_Click(object sender, EventArgs e)
+        {
+            if (ExcelExecutions.xTitle == null || ExcelExecutions.yTitle == null)
+            {
+                MessageBox.Show("Vælg venligst hvilke værdier, du ønsker at plotte på x- og y-aksen");
+            }
+            else
+            {
+                oxyPlot.oxyPlotMain();
+            }
+        }
     }
 
-    // Contains values such as directories and etc.
-    class values
+    // Contains input & output path.
+    class inputOutputPath
     {
         public static String filePath { get; set; }
         public static String outputPath { get; set; }
