@@ -49,22 +49,24 @@ namespace Kemimakkeren
             Process.Start(outputPath);
         }
 
+        // Selects the x-values and stores them in array
         private void xValues_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             int locationPressed = xValues.IndexFromPoint(e.Location);
             ExcelExecutions.xTitle = ExcelExecutions.xlColumnTitles[locationPressed];
             chosenXValue.Text = "Valgt: " + ExcelExecutions.xTitle;
             chosenXValue.ForeColor = Color.Green;
-            ExcelExecutions.addValuesToArray(locationPressed, ExcelExecutions.xValues);
+            ExcelExecutions.xValues = ExcelExecutions.addValuesToArray(locationPressed);
         }
 
+        // Selects the y-values and stores them in array
         private void yValues_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             int locationPressed = xValues.IndexFromPoint(e.Location);
             ExcelExecutions.yTitle = ExcelExecutions.xlColumnTitles[locationPressed];
             chosenYValue.Text = "Valgt: " + ExcelExecutions.yTitle;
             chosenYValue.ForeColor = Color.Green;
-            ExcelExecutions.addValuesToArray(locationPressed, ExcelExecutions.yValues);
+            ExcelExecutions.yValues = ExcelExecutions.addValuesToArray(locationPressed);
         }
 
         private void initPlot_Click(object sender, EventArgs e)

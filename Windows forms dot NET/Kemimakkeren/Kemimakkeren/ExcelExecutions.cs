@@ -35,22 +35,21 @@ namespace Kemimakkeren
             xlColumnTitles = tempTitleArray;
         }
 
-        // Adds the chosen values to its corresponding value array FIX DIS YES VERY GOOD
-        public static void addValuesToArray(int indexChosen, double[] array)
+        // Adds the chosen values to its corresponding value array
+        public static double[] addValuesToArray(int indexChosen)
         {
+            double[] tempArray = new double[xlRange.Rows.Count-1];
             string tempValue;
-            for (int i = 0; i < xlRange.Rows.Count; i++)
+            for (int i = 0; i < xlRange.Rows.Count-1; i++)
             {
                 tempValue = Convert.ToString(xlWorksheet.Cells[i + 2, indexChosen + 1].Value2);
-
                 if (tempValue == null)
                 {
-                    tempValue = "0.0";
+                    tempValue = "0";
                 }
-
-                // This throws an error "System.NullReferenceException: 'Object reference not set to an instance of an object.'"
-                array[i] = Convert.ToDouble(tempValue);
+                tempArray[i] = double.Parse(tempValue);
             }
+            return tempArray;
         }
 
 
