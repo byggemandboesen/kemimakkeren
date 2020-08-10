@@ -20,6 +20,7 @@ pip install scipy
 pip install matplotlib
 pip install numpy
 pip install pandas
+pip install xldr
 ```
 
 ## Running the program
