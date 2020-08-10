@@ -61,7 +61,7 @@ for konc, stof in zip(koncentrationer, stofnavne):
 
     legend = ('Lineær tilpasning\nf(x)={0}\nr-værdi = {1}'.format(lin_reg_str, abs(round(r_value, 5))), 'Målt data')
     plt.legend(legend, fancybox=True, borderpad=1, shadow=True, fontsize=14)
-    plt.savefig(fname=f'output/Orden - {i}.jpg', dpi=500)
+    plt.savefig(fname=f'output/Orden - {i}.png', dpi=500)
     i += 1
 
 print('100% finished.\nGraphs are saved in the output folder.')
