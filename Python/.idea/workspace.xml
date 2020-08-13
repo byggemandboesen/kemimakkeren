@@ -2,7 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6f6b4b9b-8ff5-488d-ad38-209b9c931694" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Windows forms dot NET/Kemimakkeren/.vs/Kemimakkeren/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../Windows forms dot NET/Kemimakkeren/.vs/Kemimakkeren/v16/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Windows forms dot NET/Kemimakkeren/Kemimakkeren/ExcelExecutions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Windows forms dot NET/Kemimakkeren/Kemimakkeren/ExcelExecutions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Windows forms dot NET/Kemimakkeren/Kemimakkeren/Form1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Windows forms dot NET/Kemimakkeren/Kemimakkeren/Form1.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Windows forms dot NET/Kemimakkeren/Kemimakkeren/Kemimakkeren.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../Windows forms dot NET/Kemimakkeren/Kemimakkeren/Kemimakkeren.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Windows forms dot NET/Kemimakkeren/Kemimakkeren/bin/Debug/Kemimakkeren.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../Windows forms dot NET/Kemimakkeren/Kemimakkeren/bin/Debug/Kemimakkeren.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Windows forms dot NET/Kemimakkeren/Kemimakkeren/bin/Debug/Kemimakkeren.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Windows forms dot NET/Kemimakkeren/Kemimakkeren/bin/Debug/Kemimakkeren.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Windows forms dot NET/Kemimakkeren/Kemimakkeren/obj/Debug/DesignTimeResolveAssemblyReferences.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Windows forms dot NET/Kemimakkeren/Kemimakkeren/obj/Debug/DesignTimeResolveAssemblyReferences.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Windows forms dot NET/Kemimakkeren/Kemimakkeren/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Windows forms dot NET/Kemimakkeren/Kemimakkeren/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Windows forms dot NET/Kemimakkeren/Kemimakkeren/obj/Debug/Kemimakkeren.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Windows forms dot NET/Kemimakkeren/Kemimakkeren/obj/Debug/Kemimakkeren.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Windows forms dot NET/Kemimakkeren/Kemimakkeren/obj/Debug/Kemimakkeren.csproj.GenerateResource.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Windows forms dot NET/Kemimakkeren/Kemimakkeren/obj/Debug/Kemimakkeren.csproj.GenerateResource.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Windows forms dot NET/Kemimakkeren/Kemimakkeren/obj/Debug/Kemimakkeren.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Windows forms dot NET/Kemimakkeren/Kemimakkeren/obj/Debug/Kemimakkeren.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Windows forms dot NET/Kemimakkeren/Kemimakkeren/obj/Debug/Kemimakkeren.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../Windows forms dot NET/Kemimakkeren/Kemimakkeren/obj/Debug/Kemimakkeren.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Windows forms dot NET/Kemimakkeren/Kemimakkeren/obj/Debug/Kemimakkeren.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Windows forms dot NET/Kemimakkeren/Kemimakkeren/obj/Debug/Kemimakkeren.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Windows forms dot NET/Kemimakkeren/Kemimakkeren/oxyPlot.cs" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,9 +30,10 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1dHG3Xrt62mqYDLpIlXFKth1OL2" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -81,29 +95,29 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="201" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1593291662376" />
-    <state width="601" height="885" key="GridCell.Tab.0.bottom" timestamp="1592774119262">
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1597046809745">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="601" height="885" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1592774119262" />
-    <state width="601" height="885" key="GridCell.Tab.0.center" timestamp="1592774119262">
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1597046809745" />
+    <state width="1899" height="282" key="GridCell.Tab.0.center" timestamp="1597046809745">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="601" height="885" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1592774119262" />
-    <state width="601" height="885" key="GridCell.Tab.0.left" timestamp="1592774119262">
+    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1597046809745" />
+    <state width="1899" height="282" key="GridCell.Tab.0.left" timestamp="1597046809745">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="601" height="885" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1592774119262" />
-    <state width="601" height="885" key="GridCell.Tab.0.right" timestamp="1592774119262">
+    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1597046809745" />
+    <state width="1899" height="282" key="GridCell.Tab.0.right" timestamp="1597046809745">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="601" height="885" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1592774119262" />
+    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1597046809745" />
     <state x="352" y="77" key="SettingsEditor" timestamp="1592772460047">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="352" y="77" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1592772460047" />
-    <state x="591" y="302" key="com.intellij.ide.util.TipDialog" timestamp="1593291634023">
+    <state x="591" y="302" key="com.intellij.ide.util.TipDialog" timestamp="1597298949632">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="591" y="302" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1593291634023" />
+    <state x="591" y="302" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1597298949632" />
   </component>
 </project>

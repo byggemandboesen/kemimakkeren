@@ -13,3 +13,17 @@ C:\Users\victo\Documents\programming-projects\kemimakkeren\Windows forms dot NET
 C:\Users\victo\Documents\programming-projects\kemimakkeren\Windows forms dot NET\Kemimakkeren\Kemimakkeren\bin\Debug\OxyPlot.WindowsForms.xml
 C:\Users\victo\Documents\programming-projects\kemimakkeren\Windows forms dot NET\Kemimakkeren\Kemimakkeren\obj\Debug\Kemimakkeren.csproj.CopyComplete
 C:\Users\victo\Documents\programming-projects\kemimakkeren\Windows forms dot NET\Kemimakkeren\Kemimakkeren\obj\Debug\Kemimakkeren.Form.resources
+D:\Documents\Programming\kemimakkeren\Windows forms dot NET\Kemimakkeren\Kemimakkeren\bin\Debug\Kemimakkeren.exe.config
+D:\Documents\Programming\kemimakkeren\Windows forms dot NET\Kemimakkeren\Kemimakkeren\bin\Debug\Kemimakkeren.exe
+D:\Documents\Programming\kemimakkeren\Windows forms dot NET\Kemimakkeren\Kemimakkeren\bin\Debug\Kemimakkeren.pdb
+D:\Documents\Programming\kemimakkeren\Windows forms dot NET\Kemimakkeren\Kemimakkeren\bin\Debug\OxyPlot.dll
+D:\Documents\Programming\kemimakkeren\Windows forms dot NET\Kemimakkeren\Kemimakkeren\bin\Debug\OxyPlot.WindowsForms.dll
+D:\Documents\Programming\kemimakkeren\Windows forms dot NET\Kemimakkeren\Kemimakkeren\bin\Debug\OxyPlot.xml
+D:\Documents\Programming\kemimakkeren\Windows forms dot NET\Kemimakkeren\Kemimakkeren\bin\Debug\OxyPlot.WindowsForms.xml
+D:\Documents\Programming\kemimakkeren\Windows forms dot NET\Kemimakkeren\Kemimakkeren\obj\Debug\Kemimakkeren.csprojAssemblyReference.cache
+D:\Documents\Programming\kemimakkeren\Windows forms dot NET\Kemimakkeren\Kemimakkeren\obj\Debug\Kemimakkeren.Form.resources
+D:\Documents\Programming\kemimakkeren\Windows forms dot NET\Kemimakkeren\Kemimakkeren\obj\Debug\Kemimakkeren.Properties.Resources.resources
+D:\Documents\Programming\kemimakkeren\Windows forms dot NET\Kemimakkeren\Kemimakkeren\obj\Debug\Kemimakkeren.csproj.GenerateResource.cache
+D:\Documents\Programming\kemimakkeren\Windows forms dot NET\Kemimakkeren\Kemimakkeren\obj\Debug\Kemimakkeren.csproj.CopyComplete
+D:\Documents\Programming\kemimakkeren\Windows forms dot NET\Kemimakkeren\Kemimakkeren\obj\Debug\Kemimakkeren.exe
+D:\Documents\Programming\kemimakkeren\Windows forms dot NET\Kemimakkeren\Kemimakkeren\obj\Debug\Kemimakkeren.pdb
