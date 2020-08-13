@@ -20,6 +20,12 @@ pip install scipy
 pip install matplotlib
 pip install numpy
 pip install pandas
+pip install xlrd
+```
+or by using the requirements.txt file included in the Python directory
+```bash
+cd Python
+pip install requirements.txt
 ```
 
 ## Running the program
