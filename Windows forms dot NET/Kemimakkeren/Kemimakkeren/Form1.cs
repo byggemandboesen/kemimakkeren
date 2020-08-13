@@ -56,7 +56,9 @@ namespace Kemimakkeren
             ExcelExecutions.xTitle = ExcelExecutions.xlColumnTitles[locationPressed];
             chosenXValue.Text = "Valgt: " + ExcelExecutions.xTitle;
             chosenXValue.ForeColor = Color.Green;
-            ExcelExecutions.xValues = ExcelExecutions.addValuesToArray(locationPressed);
+            ExcelExecutions.xPressed = locationPressed;
+            
+            // ExcelExecutions.xValues = ExcelExecutions.addValuesToArray(locationPressed);
         }
 
         // Selects the y-values and stores them in array
@@ -66,7 +68,9 @@ namespace Kemimakkeren
             ExcelExecutions.yTitle = ExcelExecutions.xlColumnTitles[locationPressed];
             chosenYValue.Text = "Valgt: " + ExcelExecutions.yTitle;
             chosenYValue.ForeColor = Color.Green;
-            ExcelExecutions.yValues = ExcelExecutions.addValuesToArray(locationPressed);
+            ExcelExecutions.yPressed = locationPressed;
+
+            // ExcelExecutions.yValues = ExcelExecutions.addValuesToArray(locationPressed);
         }
 
         private void initPlot_Click(object sender, EventArgs e)
@@ -77,7 +81,7 @@ namespace Kemimakkeren
             }
             else
             {
-                oxyPlot.oxyPlotMain();
+                plotFunctions.plotMain();
             }
         }
     }

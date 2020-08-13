@@ -19,6 +19,8 @@ namespace Kemimakkeren
             
             updateTitles();
 
+            xlApp.Visible = true;
+            
         }
 
         // Updates the titles in the document
@@ -35,6 +37,8 @@ namespace Kemimakkeren
             xlColumnTitles = tempTitleArray;
         }
 
+
+        /*
         // Adds the chosen values to its corresponding value array
         public static double[] addValuesToArray(int indexChosen)
         {
@@ -51,7 +55,7 @@ namespace Kemimakkeren
             }
             return tempArray;
         }
-
+        */
 
         public static Excel.Range xlRange { get; set; }
         public static Excel._Worksheet xlWorksheet { get; set; }
@@ -64,9 +68,18 @@ namespace Kemimakkeren
         public static String xTitle { get; set; }
         public static String yTitle { get; set; }
 
+        // Two integers that store the chosen x- and y-value (column number)
+        public static int xPressed { get; set; }
+        public static int yPressed { get; set; }
+        // String array with column names
+        public static string[] columnNames = { "A", "B", "C", "D", "E", "F", "G" };
+
+
+        /*
         // Arrays that store active x- and y-value
         public static double[] xValues { get; set; }
         public static double[] yValues { get; set; }
+        */
     }
 
 }
