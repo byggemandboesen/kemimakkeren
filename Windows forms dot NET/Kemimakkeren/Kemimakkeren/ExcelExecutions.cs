@@ -11,7 +11,7 @@ namespace Kemimakkeren
     {
         public static void initExcel()
         {
-            Excel.Application xlApp = new Excel.Application();
+            xlApp = new Excel.Application();
             xlApp.Visible = false;
             Excel.Workbook xlWorkBook = xlApp.Workbooks.Open(inputOutputPath.filePath);
             xlWorksheet = xlWorkBook.Worksheets[1];
@@ -38,7 +38,7 @@ namespace Kemimakkeren
         }
 
 
-        /*
+        
         // Adds the chosen values to its corresponding value array
         public static double[] addValuesToArray(int indexChosen)
         {
@@ -55,10 +55,11 @@ namespace Kemimakkeren
             }
             return tempArray;
         }
-        */
+        
 
         public static Excel.Range xlRange { get; set; }
         public static Excel._Worksheet xlWorksheet { get; set; }
+        public static Excel.Application xlApp { get; set; }
 
 
         // Array stores column titles in Excel file loaded
@@ -75,11 +76,11 @@ namespace Kemimakkeren
         public static string[] columnNames = { "A", "B", "C", "D", "E", "F", "G" };
 
 
-        /*
+        
         // Arrays that store active x- and y-value
         public static double[] xValues { get; set; }
         public static double[] yValues { get; set; }
-        */
+        
     }
 
 }

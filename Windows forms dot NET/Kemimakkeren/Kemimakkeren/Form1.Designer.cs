@@ -40,6 +40,7 @@
             this.chosenXValue = new System.Windows.Forms.Label();
             this.chosenYValue = new System.Windows.Forms.Label();
             this.initPlot = new System.Windows.Forms.Button();
+            this.plotReactionOrder = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // Title
@@ -140,7 +141,7 @@
             // 
             // initPlot
             // 
-            this.initPlot.Location = new System.Drawing.Point(210, 250);
+            this.initPlot.Location = new System.Drawing.Point(210, 275);
             this.initPlot.Name = "initPlot";
             this.initPlot.Size = new System.Drawing.Size(80, 30);
             this.initPlot.TabIndex = 9;
@@ -148,12 +149,23 @@
             this.initPlot.UseVisualStyleBackColor = true;
             this.initPlot.Click += new System.EventHandler(this.initPlot_Click);
             // 
+            // plotReactionOrder
+            // 
+            this.plotReactionOrder.AutoSize = true;
+            this.plotReactionOrder.Location = new System.Drawing.Point(177, 240);
+            this.plotReactionOrder.Name = "plotReactionOrder";
+            this.plotReactionOrder.Size = new System.Drawing.Size(146, 23);
+            this.plotReactionOrder.TabIndex = 10;
+            this.plotReactionOrder.Text = "Plot reaktionsorden";
+            this.plotReactionOrder.UseVisualStyleBackColor = true;
+            // 
             // Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(484, 361);
+            this.Controls.Add(this.plotReactionOrder);
             this.Controls.Add(this.initPlot);
             this.Controls.Add(this.chosenYValue);
             this.Controls.Add(this.chosenXValue);
@@ -189,6 +201,7 @@
         private System.Windows.Forms.Label chosenXValue;
         private System.Windows.Forms.Label chosenYValue;
         private System.Windows.Forms.Button initPlot;
+        private System.Windows.Forms.CheckBox plotReactionOrder;
     }
 }
 

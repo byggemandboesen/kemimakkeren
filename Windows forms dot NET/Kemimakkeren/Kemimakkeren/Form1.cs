@@ -22,6 +22,7 @@ namespace Kemimakkeren
             if (fileBrowseDialog.ShowDialog() == DialogResult.OK)
             {
                 inputOutputPath.filePath = fileBrowseDialog.FileName;
+                inputOutputPath.outputPath = fileBrowseDialog.FileName.Replace("\\" + Path.GetFileName(fileBrowseDialog.FileName), "");
                 ExcelExecutions.initExcel();
                 updateListBoxValues(xValues, yValues);
             }
@@ -34,6 +35,8 @@ namespace Kemimakkeren
         // Updates the two listboxes with new titles
         public static void updateListBoxValues(ListBox xValues, ListBox yValues)
         {
+            xValues.Items.Clear();
+            yValues.Items.Clear();
             for (int i = 0; i < ExcelExecutions.xlColumnTitles.Length; i++)
             {
                 xValues.Items.Add(ExcelExecutions.xlColumnTitles[i]);
@@ -44,9 +47,15 @@ namespace Kemimakkeren
         // Opens the output folder
         private void button1_Click(object sender, EventArgs e)
         {
-            string outputPath = Path.Combine(Directory.GetCurrentDirectory(), "Output files");
-            inputOutputPath.outputPath = outputPath;
-            Process.Start(outputPath);
+            if (inputOutputPath.outputPath == null)
+            {
+                MessageBox.Show("Output-placeringen bestemmes først, når du har valgt en Excel-fil.", "Vælg Excel-fil først");
+            }
+            else
+            {
+                Process.Start(inputOutputPath.outputPath);
+            }
+            
         }
 
         // Selects the x-values and stores them in array
@@ -70,7 +79,7 @@ namespace Kemimakkeren
             chosenYValue.ForeColor = Color.Green;
             ExcelExecutions.yPressed = locationPressed;
 
-            // ExcelExecutions.yValues = ExcelExecutions.addValuesToArray(locationPressed);
+            ExcelExecutions.yValues = ExcelExecutions.addValuesToArray(locationPressed);
         }
 
         private void initPlot_Click(object sender, EventArgs e)
@@ -81,7 +90,7 @@ namespace Kemimakkeren
             }
             else
             {
-                plotFunctions.plotMain();
+                plotFunctions.plotMain(plotReactionOrder);
             }
         }
     }
