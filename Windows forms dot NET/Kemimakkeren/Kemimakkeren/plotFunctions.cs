@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
 using Excel = Microsoft.Office.Interop.Excel;
+using Microsoft.Office.Interop.Excel;
 
 namespace Kemimakkeren
 {
@@ -17,8 +14,8 @@ namespace Kemimakkeren
 
             if (plotReactionOrder.Checked)
             {
-                Excel.Range lnValueLocation = findCell("ln(" + columnTitle + ")");
-                Excel.Range inverseValueLocation = findCell("1/" + columnTitle);
+                Range lnValueLocation = findCell("ln(" + columnTitle + ")");
+                Range inverseValueLocation = findCell("1/" + columnTitle);
                 if (lnValueLocation == null || inverseValueLocation == null)
                 {
                     // Add first and second order column
@@ -43,39 +40,54 @@ namespace Kemimakkeren
         // Function that creates the plot
         public static void plotChart(string columnTitle)
         {
-            Excel.Range chartRange;
+            Range chartRange;
             object misValue = System.Reflection.Missing.Value;
 
             // Creates the chart
-            Excel.ChartObjects xlCharts = (Excel.ChartObjects)ExcelExecutions.xlWorksheet.ChartObjects(Type.Missing);
-            Excel.ChartObject myChart = xlCharts.Add(250, 50, 400, 250);
-            Excel.Chart xlChart = myChart.Chart;
-            xlChart.ChartType = Excel.XlChartType.xlXYScatter;
+            ChartObjects xlCharts = (ChartObjects)ExcelExecutions.xlWorksheet.ChartObjects(Type.Missing);
+            ChartObject myChart = xlCharts.Add(250, 50, 600, 350);
+            Chart xlChart = myChart.Chart;
+            xlChart.ChartType = XlChartType.xlXYScatter;
 
             // Gets the range for the column title
-            Excel.Range XcolumnTitleLocation = findCell(ExcelExecutions.xTitle);
-            Excel.Range YcolumnTitleLocation = findCell(columnTitle); 
+            Range XcolumnTitleLocation = findCell(ExcelExecutions.xTitle);
+            Range YcolumnTitleLocation = findCell(columnTitle); 
 
-            // The title and value for the x- and y-axis
+            // The title for the x- and y-axis
+            Axis xAxis = xlChart.Axes(XlAxisType.xlCategory, XlAxisGroup.xlPrimary) as Axis;
+            Axis yAxis = xlChart.Axes(XlAxisType.xlValue, XlAxisGroup.xlPrimary) as Axis;
+            xAxis.HasTitle = true;
+            yAxis.HasTitle = true;
+            xAxis.AxisTitle.Text = XcolumnTitleLocation.Value;
+            yAxis.AxisTitle.Text = YcolumnTitleLocation.Value;
+
+            // The values for the chart
             string xColumnPrefix = ExcelExecutions.columnNames[XcolumnTitleLocation.Column - 1];
             string yColumnPrefix = ExcelExecutions.columnNames[YcolumnTitleLocation.Column - 1];
-            Excel.Range xValues = ExcelExecutions.xlWorksheet.Range[xColumnPrefix + "2", (xColumnPrefix + ExcelExecutions.xlRange.Rows.Count.ToString())];
-            Excel.Range yvalues = ExcelExecutions.xlWorksheet.Range[yColumnPrefix + "2", (yColumnPrefix + ExcelExecutions.xlRange.Rows.Count.ToString())];
+            Range xValues = ExcelExecutions.xlWorksheet.Range[xColumnPrefix + "2", (xColumnPrefix + ExcelExecutions.xlRange.Rows.Count.ToString())];
+            Range yvalues = ExcelExecutions.xlWorksheet.Range[yColumnPrefix + "2", (yColumnPrefix + ExcelExecutions.xlRange.Rows.Count.ToString())];
 
             // Assigns the value to the chart
-            Excel.SeriesCollection seriesCollection = xlChart.SeriesCollection();
-            Excel.Series series1 = seriesCollection.NewSeries();
-            series1.XValues = xValues;
-            series1.Name = columnTitle;
-            series1.Values = yvalues;
+            SeriesCollection seriesCollection = xlChart.SeriesCollection();
+            Series pointPlot = seriesCollection.NewSeries();
+            pointPlot.XValues = xValues;
+            pointPlot.Name = columnTitle;
+            pointPlot.Values = yvalues;
 
-            saveChart(xlChart, series1.Name);
+            // Creates trendline(regression)
+            Trendlines trendlines = (Trendlines)pointPlot.Trendlines(Type.Missing);
+            Trendline linearRegression = trendlines.Add(XlTrendlineType.xlLinear);
+            linearRegression.DisplayEquation = true;
+            linearRegression.DisplayRSquared = true;
+
+
+            saveChart(xlChart, pointPlot.Name);
         }
 
         // Searches for a given value in the used range
-        public static Excel.Range findCell(string value)
+        public static Range findCell(string value)
         {
-            Excel.Range valueLocation;
+            Range valueLocation;
             // Updates the UsedRange since it could have changed since opening the document(new columns added)
             ExcelExecutions.xlRange = ExcelExecutions.xlWorksheet.UsedRange;
 
@@ -113,7 +125,7 @@ namespace Kemimakkeren
         }
 
         // Exports the chart the function is given
-        public static void saveChart(Excel.Chart chart, string chartName)
+        public static void saveChart(Chart chart, string chartName)
         {
             chartName = chartName.Replace("/", " divby ");
             chart.Export(Path.Combine(inputOutputPath.outputPath , chartName + ".png"));
