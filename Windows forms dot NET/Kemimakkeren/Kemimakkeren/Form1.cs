@@ -99,8 +99,8 @@ namespace Kemimakkeren
             if (inputOutputPath.filePath != null)
             {
                 ExcelExecutions.xlWorksheet.SaveAs(inputOutputPath.outputPath + "\\Kemimakkeren.xlsx");
+                ExcelExecutions.xlApp.Quit();
             }
-            ExcelExecutions.xlApp.Quit();
         }
     }
 
