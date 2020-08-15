@@ -93,6 +93,15 @@ namespace Kemimakkeren
                 plotFunctions.plotMain(plotReactionOrder);
             }
         }
+
+        private void Form_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (inputOutputPath.filePath != null)
+            {
+                ExcelExecutions.xlWorksheet.SaveAs(inputOutputPath.outputPath + "\\Kemimakkeren.xlsx");
+            }
+            ExcelExecutions.xlApp.Quit();
+        }
     }
 
     // Contains input & output path.

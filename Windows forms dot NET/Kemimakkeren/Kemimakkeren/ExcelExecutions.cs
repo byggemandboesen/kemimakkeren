@@ -18,8 +18,6 @@ namespace Kemimakkeren
             xlRange = xlWorksheet.UsedRange;
             
             updateTitles();
-
-            xlApp.Visible = true;
             
         }
 

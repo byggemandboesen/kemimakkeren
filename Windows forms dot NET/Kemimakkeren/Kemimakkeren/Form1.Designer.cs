@@ -183,6 +183,7 @@
             this.MinimumSize = new System.Drawing.Size(500, 400);
             this.Name = "Form";
             this.Text = "Kemimakkeren - Victor Boesen";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
