@@ -1,6 +1,7 @@
 # Kemimakkeren
 The purpose of this program is to save time plotting the concentration of a solution over time in the danish chemistry exam in "Gymnasium".
 
+# Python
 ## Installing
 Install git on your computer and copy the repository link. Open command prompt in your desired install directory and type the following:
 ```bash
@@ -28,10 +29,19 @@ cd Python
 pip install requirements.txt
 ```
 
-## Running the program
+## How to use
 To run the program, cd into your directory and open commandprompt.
 Add the excel file to the input folder and run the program:
 ```bash
 python Main.py
 ```
 The output image files with each graph will be saved in the output folder.
+
+# Windows forms (C# .NET)
+The windows forms program is more versatile, and it can also be used to create graphs other than concentration/time such as absorbance to use for Lambert Beers law.
+
+## How to use
+The windows forms program can be found in the "Windows forms dot NET\Kemimakkeren\Kemimakkeren\bin\Debug" directory as "Kemimakkeren.exe".
+It's not required to install any packages to run the .exe compared to the python program.
+
+The program will save an Excel file called "Kemimakkeren.xlsx" in the same directory as the supplied/loaded Excel file. Furthermore, all the output chart/graphs will also be saved in this directory, which can be launched in file explorer by clicking the "Åben output placering" button.
