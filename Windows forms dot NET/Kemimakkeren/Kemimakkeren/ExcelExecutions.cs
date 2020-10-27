@@ -49,11 +49,22 @@ namespace Kemimakkeren
                 {
                     tempValue = "0";
                 }
-                tempArray[i] = double.Parse(tempValue);
+
+                // Tries to parse comma and dot numbers
+                if (tempValue.Contains(",")){
+                    tempValue = tempValue.Replace(",", ".");
+                    xlWorksheet.Cells[i + 2, indexChosen + 1].Value = tempValue;
+                    tempArray[i] = double.Parse(tempValue);
+                }
+                else
+                {
+                    tempArray[i] = double.Parse(tempValue.Replace(",", "."));
+                }
+                
             }
             return tempArray;
         }
-        
+
 
         public static Excel.Range xlRange { get; set; }
         public static Excel._Worksheet xlWorksheet { get; set; }
