@@ -18,7 +18,7 @@ namespace Kemimakkeren
         {
             OpenFileDialog fileBrowseDialog = new OpenFileDialog();
             fileBrowseDialog.Title = "Vælg Excel-filen med data";
-            fileBrowseDialog.Filter = "Excel filer (*.xlsx; *.csv;)|*.xlsx; *.csv;|All files (*.*)|*.*";
+            fileBrowseDialog.Filter = "Excel filer (*.xlsx; *.csv; *.xls;)|*.xlsx; *.csv; *.xls;|All files (*.*)|*.*";
             if (fileBrowseDialog.ShowDialog() == DialogResult.OK)
             {
                 inputOutputPath.filePath = fileBrowseDialog.FileName;
